@@ -1,0 +1,139 @@
+body {
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(to top, hsl(236, 21%, 26%), hsl(235, 16%, 14%), hsl(234, 17%, 12%));
+}
+
+.parent .soon {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+    z-index: 2000;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.parent .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.parent .container>div {
+    text-align: center;
+}
+
+.parent .container span {
+    color: hsl(345, 95%, 68%);
+    font-weight: bold;
+    padding: 10px;
+    display: inline-flex;
+    background-image: linear-gradient(to top, hsl(236, 21%, 26%), hsl(234, 17%, 12%));
+    height: 90px;
+    width: 95px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    position: relative;
+    font-size: 35px;
+    box-shadow: 0 5px 0px 0 hsl(234, 17%, 12%);
+    border-radius: 10px;
+}
+
+@media (max-width:767px) {
+    .parent .container span {
+        width: 70px;
+        height: 70px;
+        font-size: 25px;
+    }
+}
+
+.parent .container span::before,
+.parent .container span::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    background: hsl(234, 17%, 12%);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.parent .container span::before {
+    left: 0px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.parent .container span::after {
+    right: 0px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.parent .container .name {
+    color: hsl(237, 18%, 59%);
+    margin-top: 10px;
+}
+
+.social {
+    position: absolute;
+    bottom: 30px;
+    z-index: 3000;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social a {
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.social a img {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+.social a:hover img {
+    filter: brightness(0.8);
+}
+
+.stars {
+    max-width: 100%;
+    position: absolute;
+}
+
+.hills {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+}
+
+@media (max-width:767px) {
+    .hills {
+        width: unset;
+        height: 20%;
+    }
+}
